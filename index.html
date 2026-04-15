@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lockstate: Quorum Breach</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div>
+        <h1>LOCKSTATE: QUORUM BREACH</h1>
+        <p class="subtitle">Mission-oriented action prototype inspired by distributed database systems</p>
+      </div>
+      <button id="startBtn" class="btn">Start / Restart Mission</button>
+    </header>
+
+    <main class="layout">
+      <section class="game-panel">
+        <canvas id="game" width="960" height="540" aria-label="Game canvas"></canvas>
+        <div id="tutorialOverlay" class="tutorial-overlay">
+          <h3>Quick Tutorial</h3>
+          <p>WASD to move, mouse to aim, hold click to shoot.</p>
+          <p>Press E near a tower to lock or unlock vote control.</p>
+          <p>Keep at least 3 towers locked and alive for 12 seconds.</p>
+          <p>Once consensus is stable, the boss shield drops.</p>
+          <p>Press H to hide/show this help. Press P to pause.</p>
+        </div>
+        <div class="controls">
+          <strong>Controls:</strong> WASD move, mouse aim, click shoot, E lock/unlock tower, Shift dash, H help, P pause
+        </div>
+      </section>
+
+      <aside class="hud">
+        <div class="card">
+          <h2>Local Node HUD</h2>
+          <p id="playerHp"></p>
+          <p id="bossHp"></p>
+          <p id="quorum"></p>
+          <p id="shield"></p>
+          <p id="status"></p>
+        </div>
+
+        <div class="card">
+          <h2>Distributed Catalogs</h2>
+          <p class="hint">Local sector is exact. Remote sticky notes can become stale.</p>
+          <div id="catalog"></div>
+        </div>
+
+        <div class="card">
+          <h2>Mission Goal</h2>
+          <ul>
+            <li>Lock and defend at least 3 of 5 towers</li>
+            <li>Hold majority consensus for 12 seconds</li>
+            <li>Drop global shield and eliminate the Warden</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
