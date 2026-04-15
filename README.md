@@ -58,28 +58,9 @@ vercel.json   — Rewrite config for Vercel static deployment
 
 ---
 
-## Running Locally
 
-Just open `index.html` in any browser. No build step, no dependencies.
 
-If you prefer a local server:
-```bash
-npx serve .
-# or
-python -m http.server
-```
 
----
-
-## Deploying to Vercel
-
-1. Push this folder to a Git repo
-2. Import it in [Vercel](https://vercel.com)
-3. Use these settings:
-   - **Framework preset:** Other
-   - **Build command:** *(leave blank)*
-   - **Output directory:** `.`
-4. Hit Deploy
 
 The `vercel.json` handles routing so all paths resolve to `index.html`.
 
